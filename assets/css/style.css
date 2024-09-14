@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+#cover {
+    /*background: #222 url('https://unsplash.it/1920/1080/?random') center center no-repeat;*/
+    background: #222 url('../images/pozadina.jpg') no-repeat;
+    background-size: cover;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+#cover-caption {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+/* only used for background overlay not needed for centering */
+form:before {
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,0.3);
+    z-index: -1;
+    border-radius: 10px;
+}
+#cover .btn-primary {
+    color: #fff;
+    background-color: #a57c29;
+    border-color: #a57c29;
+}
+::placeholder {
+    color: #fff !important;
+    opacity: 1; /* Firefox */
+    font-family: 'Roboto', sans-serif;
+}
+  
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #fff !important;
+   font-family: 'Roboto', sans-serif;
+}
+  
+::-ms-input-placeholder { /* Microsoft Edge */
+   color: #fff !important;
+   font-family: 'Roboto', sans-serif;
+}
+.form-control {
+    background-color: #fff0;
+    color: red;
+}
+
+.box {
+    background: #1cb8c7;
+    color: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 350px;
+    margin: 50px 0;
+}
+#orders {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+}
+nav {
+    background-color: #1cb8c7!important;
+}
+
+/* product */
+#products {
+    margin: 100px 0;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+  
+.productBox {
+    background: #1cb8c7;
+    padding: 30px;
+    max-width: 400px;
+    margin: auto;
+    margin-bottom: 30px;
+    color: #ffffff;
+    border-radius: 20px;
+    font-weight: 600;
+}
+  
+.productBox img {
+    width: 100%;
+    height: 250px;
+    border-radius: 20px;
+}
+  
+.navbar-light .navbar-nav .nav-link {
+    color: rgb(255, 255, 255);
+}
+
+#logo {
+    width: 100px;
+}
