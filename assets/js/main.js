@@ -50,11 +50,51 @@ const showOrders = obj => {
                     OrderID ${resultOrder.id}<br/><hr/>
                 </p>
                 ${resultOrderDetails.map(x => {
-
-
-
+                    suma += x.quantity * x.unitPrice * (1 - x.discount)
+                    ukupnaSuma += suma;
+                    return `
+                        <p style=font-size: 15px>
+                            ProductId: ${x.productId}
+                        </p>
+                        <p style=font-size: 15px>
+                            Quantity: ${x.quantity}
+                        </p>
+                        <p style=font-size: 15px>
+                            UnitPrice: ${x.unitPrice}
+                        </p>
+                        <p style=font-size: 15px>
+                            Date: ${konacanDatum.slice(0,10)}<hr/>
+                        </p>
+                        <p style=font-size: 15px color: #5cfe1e>
+                            Amount: $ ${suma.toFixed(2)}<hr/>
+                        </p>
+                    `
                 }).join(' ')}
+                <p style=font-size: 30px>
+                    TotalAmount: ${ukupnaSuma.toFixed(2)}<br/>
+                </p>
             </div>
         </div>
     `
-}
+};
+
+const username = sessionStorage.getItem('keyUsername');
+$("#logout").text(username)
+$('#logout').on({
+    mouseover: function() {
+        $(this).text(`Logout`)
+        $(this).css({
+            "background": "gray",
+            "color": "white",
+            "border-radius": "10px"
+        })
+    },
+    mouseout: function() {
+        $(this).text(username)
+    },
+    click: function() {
+        sessionStorage.removeItem('keyUsername')
+        sessionStorage.removeItem('keyPassword')
+        location.href = 'login.html'
+    }
+})
